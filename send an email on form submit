@@ -1,0 +1,16 @@
+
+//  Select certain columns from a spreadsheet on form submit to include in the email.  
+//  You must add a trigger to run this function on form submitt
+
+function emailSubmitter{
+
+  var sheet = SpreadsheetApp.getActiveSheet();
+  var lastRow = sheet.getLastRow();
+  var submitterEmail = sheet.getRange(lastRow,2).getValue(); // This gets the value from the last row, second cell. First cell is a timestamp.   Which is the row that was just populated when the form was submitted
+  var phone = sheet.getRange(lastRow,3).getValue();  //  3rd cell in the submitted row
+  var subject = "Form Submit Confirmation";   
+  var body = "Thanks for your submital and we will call you in the next 24 hours at " + phone;
+  
+  GmailApp.sendEmail(submitterEmail,subject, body);
+  
+  
