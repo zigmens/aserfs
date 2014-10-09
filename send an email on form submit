@@ -5,13 +5,16 @@
 
 function emailSubmitter() {
 
+  //  General variables
   var sheet = SpreadsheetApp.getActiveSheet();
   var lastRow = sheet.getLastRow();
+  //  Get specific columns in the last row
   var submitterEmail = sheet.getRange(lastRow,2).getValue(); // This gets the value from the last row, second cell. First cell is a timestamp.   Which is the row that was just populated when the form was submitted
   var phone = sheet.getRange(lastRow,3).getValue();  //  3rd cell in the submitted row
+  //  Create variables for email
   var subject = "Form Submit Confirmation";   
   var body = "Thanks for your submital and we will call you in the next 24 hours at " + phone;
-  
+  //  Create email
   GmailApp.sendEmail(submitterEmail,subject, body);
   }
   
