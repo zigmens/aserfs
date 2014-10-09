@@ -3,7 +3,7 @@
 //  Select certain columns from a spreadsheet on form submit to include in the email.  
 //  You must add a trigger to run this function on form submit
 
-function emailSubmitter{
+function emailSubmitter() {
 
   var sheet = SpreadsheetApp.getActiveSheet();
   var lastRow = sheet.getLastRow();
@@ -13,5 +13,5 @@ function emailSubmitter{
   var body = "Thanks for your submital and we will call you in the next 24 hours at " + phone;
   
   GmailApp.sendEmail(submitterEmail,subject, body);
-  
+  }
   
