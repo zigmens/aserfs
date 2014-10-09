@@ -1,4 +1,5 @@
 
+//  ZigMens.com
 //  Select certain columns from a spreadsheet on form submit to include in the email.  
 //  You must add a trigger to run this function on form submit
 
